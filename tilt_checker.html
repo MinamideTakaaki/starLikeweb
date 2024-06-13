@@ -10,12 +10,12 @@
 		console.log("a");
 		function handleOrientation(event) {
     	let absolute = event.absolute;
-  		let alpha = event.alpha;
-  		let beta = event.beta;
+  		let alpha = event.alpha; //z軸回転
+  		let beta = event.beta;　
   		let gamma = event.gamma;
 
   		// console.log(absolute, alpha, beta, gamma, "absolute", "alpha", "beta", "gamma");
-  		console.log(alpha);
+  		console.log(beta);
 
 
   		// 新たな方向データに基づいて処理を行う
