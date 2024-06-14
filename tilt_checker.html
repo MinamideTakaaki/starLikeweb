@@ -6,13 +6,32 @@
 	<title>Document</title>
 </head>
 <body>
+
+	<svg>
+		<circle id="circle" r="15" fill="white"></circle>
+	</svg>
+
 	<script>
 		console.log("a");
+		let X = 200, Y=200;
+		circle.style.cx=X;
+		circle.style.cy=Y;
+		// ボールの位置決め
+
+
 		function handleOrientation(event) {
     	let absolute = event.absolute;
   		let alpha = event.alpha; //z軸回転
   		let beta = event.beta; //x軸回転
   		let gamma = event.gamma; //y軸回転
+
+  		X+=gamma
+  		Y+=beta
+  		console.log(X,gamma);
+
+
+			circle.style.cx = X;
+			circle.style.cy = Y;
 
 
   		// 新たな方向データに基づいて処理を行う
@@ -20,5 +39,16 @@
 
 		window.addEventListener("deviceorientation", handleOrientation, true);
 	</script>
+
+	<style>
+		svg{
+			/*svg の初期値*/
+			width: 80%;
+			height: 80vh;
+			background-color: rgb(200, 200, 240, 1.0);
+			margin-bottom: 0px;
+		}
+	</style>
+
 </body>
 </html>
