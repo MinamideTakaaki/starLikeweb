@@ -13,7 +13,9 @@
 
 	<script>
 		console.log("a");
-		let X = 200, Y=200;
+		const sc_height=screen.height, sc_width=screen.width;
+		console.log(sc_height,sc_width);
+		let X = sc_width/2, Y=sc_height/2;
 		circle.style.cx=X;
 		circle.style.cy=Y;
 		// ボールの位置決め
@@ -27,7 +29,6 @@
 
   		X+=gamma
   		Y+=beta
-  		console.log(X,gamma);
 
 
 			circle.style.cx = X;
@@ -45,8 +46,12 @@
 			/*svg の初期値*/
 			width: 80%;
 			height: 80vh;
+			display: block;
 			background-color: rgb(200, 200, 240, 1.0);
-			margin-bottom: 0px;
+			/*margin-left:auto;
+			margin-right: auto;*/
+			margin: auto auto;
+
 		}
 	</style>
 
