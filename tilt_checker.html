@@ -12,9 +12,7 @@
 	</svg>
 
 	<script>
-		console.log("a");
 		const sc_height=screen.height, sc_width=screen.width;
-		console.log(sc_height,sc_width);
 		let X = sc_width/2, Y=sc_height/2;
 		circle.style.cx=X;
 		circle.style.cy=Y;
@@ -34,6 +32,15 @@
 			circle.style.cx = X;
 			circle.style.cy = Y;
 
+			if (X<=0 || X>=sc_width) {
+				console.log("X");
+				X*=-1;
+			}
+			if (Y<=0 || Y >= sc_height) {
+				Y*=-1;
+				console.log("Y",Y);
+			}
+
 
   		// 新たな方向データに基づいて処理を行う
 		}
@@ -42,15 +49,23 @@
 	</script>
 
 	<style>
+		html{
+			height:100%;
+			margin:0;
+		}
+		body{
+			height:100%;
+			margin: 0;
+		}
 		svg{
 			/*svg の初期値*/
-			width: 80%;
-			height: 80vh;
+			width: 100%;
+			height: 100%;
 			display: block;
 			background-color: rgb(200, 200, 240, 1.0);
 			/*margin-left:auto;
 			margin-right: auto;*/
-			margin: auto auto;
+			margin: 0 auto;
 
 		}
 	</style>
