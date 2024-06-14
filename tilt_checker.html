@@ -8,7 +8,7 @@
 <body>
 
 	<svg>
-		<circle id="circle" r="15" fill="white"></circle>
+		<circle id="circle" r="15" fill="gray"></circle>
 	</svg>
 
 	<script>
@@ -37,10 +37,10 @@
 
 			if (X<=0 || X>=sc_width) {
 				console.log("X");
-				X=0;
+				if (X<=0) {X=0} else {X=sc_width};
 			}
 			if (Y<=0 || Y >= sc_height) {
-				Y=0;
+			  if (Y<=0) {Y=0} else {Y=sc_height}
 				console.log("Y",Y);
 			}
 
