@@ -13,7 +13,7 @@
 
 	<script>
 		const sc_height=screen.height*.9, sc_width=screen.width*.9;
-		let X = sc_width/2, Y=sc_height/2;
+		let X = sc_width/2, Y=sc_height/2 moveX,moveY;
 		circle.style.cx=X;
 		circle.style.cy=Y;
 		// ボールの位置決め
@@ -25,8 +25,11 @@
   		let beta = event.beta; //x軸回転
   		let gamma = event.gamma; //y軸回転
 
-  		X+=gamma
-  		Y+=beta
+  		moveX=gamma;
+  		moveY=beta;
+
+  		X+=moveX;
+  		Y+=moveY;
 
 
 			circle.style.cx = X;
@@ -34,10 +37,10 @@
 
 			if (X<=0 || X>=sc_width) {
 				console.log("X");
-				X*=-1;
+				moveX*=-1
 			}
 			if (Y<=0 || Y >= sc_height) {
-				Y*=-1;
+				moveY*=-1;
 				console.log("Y",Y);
 			}
 
